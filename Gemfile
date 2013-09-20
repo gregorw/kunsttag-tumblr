@@ -9,6 +9,9 @@ gem "middleman-livereload", "~> 3.1.0"
 
 gem 'tumblargh', path: '../../gitrepos/tumblargh'
 
+gem "slim", "~> 2.0" 
+# gem "slim", "~> 1.0"
+
 # For faster file watcher updates:
 # gem "wdm", "~> 0.1.0") # Windows
 

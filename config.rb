@@ -1,3 +1,8 @@
+require "slim" 
+
+# set :slim, :layout_engine => :slim
+# set :layout_engine, "slim"
+
 ###
 # Compass
 ###

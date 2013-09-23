@@ -14,4 +14,18 @@ html lang="de"
     = javascript_include_tag  "all"
   
   body class== page_classes
+    nav
+      a href="/" Home
+      | {block:HasPages}
+      |   {block:Pages}
+      a href="{URL}" 
+        | {Label}
+      |   {/block:Pages}
+      | {/block:HasPages}
+      | {block:AskEnabled}
+      a href="/ask" 
+        | {AskLabel}
+      | {/block:AskEnabled}
+    | {title}
+    
     = yield

@@ -1,6 +1,12 @@
+# Slim tempates
 require "slim" 
-
 Slim::Engine.set_default_options pretty: true
+
+# Tumblargh
+require 'tumblargh'
+activate :tumblargh,
+  api_key: 'i41pISnf18m39MT1kMQLsRPC8mU7XcOem6eYALzkLcCoKgTtgm', # This is your OAuth consumer key
+  blog: 'kunsttag.tumblr.com'
 
 ###
 # Compass

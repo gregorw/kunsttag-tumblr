@@ -1,6 +1,6 @@
 # Slim tempates
-require "slim" 
-Slim::Engine.set_default_options pretty: true
+# require "slim" 
+# Slim::Engine.set_default_options pretty: true
 
 # Tumblargh
 require 'tumblargh'

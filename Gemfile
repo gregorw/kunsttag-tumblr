@@ -9,8 +9,8 @@ gem "middleman-livereload", "~> 3.1.0"
 
 gem 'tumblargh', path: '../../gitrepos/tumblargh'
 
-gem "slim", "~> 2.0" 
-# gem "slim", "~> 1.0"
+# Not ideal for tumblr tags
+# gem "slim", "~> 2.0" 
 
 # For faster file watcher updates:
 # gem "wdm", "~> 0.1.0") # Windows
@@ -19,3 +19,5 @@ gem "slim", "~> 2.0"
 platforms :mri_18 do
   gem "ruby18_source_location"
 end
+
+gem 'rake'

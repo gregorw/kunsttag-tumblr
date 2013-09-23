@@ -1,7 +1,6 @@
 require "slim" 
 
-# set :slim, :layout_engine => :slim
-# set :layout_engine, "slim"
+Slim::Engine.set_default_options pretty: true
 
 ###
 # Compass

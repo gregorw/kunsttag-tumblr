@@ -1,0 +1,9 @@
+#events {
+  -moz-column-count:3; /* Firefox */
+  -webkit-column-count:3; /* Safari and Chrome */
+  column-count:3;
+  
+  div {
+    width: 100px;
+  }
+}

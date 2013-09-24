@@ -1,9 +1,12 @@
 #events {
-  -moz-column-count:4; /* Firefox */
-  -webkit-column-count:4; /* Safari and Chrome */
-  column-count:4;
+//  -moz-column-count:4; /* Firefox */
+//  -webkit-column-count:4; /* Safari and Chrome */
+//  column-count:4;
   
   .post {
+    display: block;
+    float: left;
+    
     &.photo {
       img {
         width: 100%;

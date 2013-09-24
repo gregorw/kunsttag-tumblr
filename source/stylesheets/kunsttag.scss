@@ -1,11 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
+@import "compass";
+
+#logo img {
+  height: 3em;
+}
+
+#navigation-button {
+  float: right;
+  width: 2em;
+  height: 2em;
+  padding: none;
+  background: none;
+  border: none;
+  span {
+    display: block;
+    height: 5px;
+    margin: 3px 0 2px;
+    background: black;
+  }
+}
+
 #events {
-//  -moz-column-count:4; /* Firefox */
-//  -webkit-column-count:4; /* Safari and Chrome */
-//  column-count:4;
+  //  -moz-column-count:4; /* Firefox */
+  //  -webkit-column-count:4; /* Safari and Chrome */
+  //  column-count:4;
+  position: relative;
   
   .post {
+    width: 300px;
     display: block;
-    float: left;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     
     &.photo {
       img {
@@ -14,3 +38,9 @@
     }
   }
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 1em;
+}
+

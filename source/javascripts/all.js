@@ -1,5 +1,4 @@
-// require_tree .
-//= require jquery-2.0.3.js
-//= require jquery.wookmark.js
-//= require helper.js
-//= require kunsttag.js
+//= require jquery-2.0.3
+//= require jquery.wookmark
+//= require imagesloaded.pkgd
+//= require helper

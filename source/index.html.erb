@@ -1,6 +1,7 @@
 <section id="events">
   {block:Posts}
     <article class="post {PostType} {TagsAsClasses}">
+      <div class="tag"></div>
       {block:Text}
         {block:Title}
           <a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>
@@ -14,7 +15,7 @@
 
       {block:Photo}
         {LinkOpenTag}
-          <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">           
+          <img src="{PhotoURL-250}" alt="{PhotoAlt}">           
         {LinkCloseTag}
 
         {block:Caption}
@@ -125,11 +126,12 @@
 
   {/block:Posts}
 
-  {block:Pagination}
-    <div class="pagination p">
-      <span class="previous">{block:PreviousPage}<a href="{PreviousPage}" class="previous">{/block:PreviousPage}&laquo; Previous{block:PreviousPage}</a>{/block:PreviousPage}</span>
-      <span class="page-numbers">{CurrentPage}/{TotalPages}</span>
-      <span class="next">{block:NextPage}<a href="{NextPage}">{/block:NextPage}Next &raquo;{block:NextPage}</a>{/block:NextPage}</span>
-    </div>
-  {/block:Pagination}
 </section>
+
+{block:Pagination}
+  <div class="pagination p">
+    <span class="previous">{block:PreviousPage}<a href="{PreviousPage}" class="previous">{/block:PreviousPage}&laquo; Previous{block:PreviousPage}</a>{/block:PreviousPage}</span>
+    <span class="page-numbers">{CurrentPage}/{TotalPages}</span>
+    <span class="next">{block:NextPage}<a href="{NextPage}">{/block:NextPage}Next &raquo;{block:NextPage}</a>{/block:NextPage}</span>
+  </div>
+{/block:Pagination}

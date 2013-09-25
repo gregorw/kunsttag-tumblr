@@ -1,6 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
 @import "compass";
 
+$color-konzerte: #EB1F78;
+$color-theater: #8AC440;
+$color-kunst: #FFAB00;
+$color-design: #29A8E0;
+
 #logo img {
   height: 3em;
 }
@@ -20,6 +25,10 @@
   }
 }
 
+#navigation {
+  display: none;
+}
+
 #events {
   //  -moz-column-count:4; /* Firefox */
   //  -webkit-column-count:4; /* Safari and Chrome */
@@ -29,18 +38,72 @@
   .post {
     width: 300px;
     display: block;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     
     &.photo {
       img {
         width: 100%;
       }
     }
+    
+    > .tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      background-size: 50px 50px;
+      background-repeat: no-repeat;
+    }
+    
+    border-bottom: 3px solid;
+    
+    &.konzerte {
+      .tag {
+        background-image: url('../images/icon_konzerte_150.png');
+      }
+      img + p {
+        color: $color-konzerte;
+      }
+      border-color: $color-konzerte;
+    }
+    
+    &.theater {
+      .tag {
+        background-image: url('../images/icon_theater_150.png');
+      }
+      img + p {
+        color: $color-theater;
+      }
+      border-color: $color-theater;
+    }
+    
+    &.kunst {
+      .tag {
+        background-image: url('../images/icon_kunst_150.png');
+      }
+      img + p {
+        color: $color-kunst;
+      }
+      border-color: $color-kunst;
+    }
+    
+    &.design {
+      .tag {
+        background-image: url('../images/icon_design_150.png');
+      }
+      img + p {
+        color: $color-design;
+      }
+      border-color: $color-design;
+    }
   }
+}
+
+.wookmark-placeholder {
+  background: #eee;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   padding: 1em;
 }
-

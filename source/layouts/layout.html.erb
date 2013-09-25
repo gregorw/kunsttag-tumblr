@@ -15,8 +15,8 @@
 
         <!-- Theme Settings -->
         <meta name="color:Konzerte" content="#EB1F78"/>
-        <meta name="color:Film Tanz Theater" content="#FFAB00"/>
-        <meta name="color:Kunst und Medien" content="#8AC440"/>
+        <meta name="color:Film Tanz Theater" content="#8AC440"/>
+        <meta name="color:Kunst und Medien" content="#FFAB00"/>
         <meta name="color:Design" content="#29A8E0"/>
 
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
@@ -59,12 +59,16 @@
               <span></span>
               <span></span>
             </button>
-            <nav>
+            <nav id="navigation">
+              
                 <a class="konzerte" href="/konzerte">Konzerte</a>
                 <a class="film-tanz-theater" href="/film-tanz-theater">Film, Tanz, Theater</a>
                 <a class="kunst-und-medien" href="/kunst-und-medien">Kunst &amp; Medien</a>
                 <a class="design" href="/design">Design</a>
 
+                <a id="heute" href="">Heute</a>
+                <a id="morgen" href="">Morgen</a>
+                
                 {block:HasPages}
                   {block:Pages}
                     <a href="{URL}">{Label}</a>
@@ -74,12 +78,35 @@
                   <a href="/ask">{AskLabel}</a>
                 {/block:AskEnabled}
             </nav>
+            
+            <select>
+              <optgroup label="Was">
+                <option>Konzerte</option>
+                <option>FTT</option>
+                <option>K&amp;M</option>
+                <option>Design</option>
+              </optgroup>
+              <optgroup label="Wo">
+                <option>Zürich</option>
+                <option>Berlin</option>
+                <option>Basel</option>
+                <option>Bern</option>
+                <option>Luzern</option>
+              </optgroup>
+              <optgroup label="Wann">
+                <option>Heute</option>
+                <option>Morgen</option>
+              </optgroup>
+            </select>
         </header>
         
-        <%= yield %>
+        <div>
+          <%= yield %>          
+        </div>
 
         <!-- Add your site or application content here -->
         <%= javascript_include_tag  "all" %>
+        <%= javascript_include_tag  "kunsttag" %>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

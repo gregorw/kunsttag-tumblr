@@ -2,3 +2,4 @@
 //= require jquery.wookmark
 //= require imagesloaded.pkgd
 //= require helper
+//= require kunsttag

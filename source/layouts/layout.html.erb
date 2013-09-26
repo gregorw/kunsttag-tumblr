@@ -41,7 +41,7 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
         -->
           
-        <%= stylesheet_link_tag "normalize", "main", "kunsttag" %>
+        <%= stylesheet_link_tag "all" %>
         <%= javascript_include_tag  "modernizr-2.6.2.min" %>
         
         <style type="text/css">
@@ -69,31 +69,28 @@
                 <li><a class="design" href="/design">Design</a></li>
               </ul>
               
-              <ul id="cities"> 
-                <li><a href="/zurich">Zürich</a></li>
-                <li><a href="/berlin">Berlin</a></li>
-                <li><a href="/basel">Basel</a></li>
-                <li><a href="/bern">Bern</a></li>
-                <li><a href="/luzern">Luzern</a></li>
+              <ul id="cities">
+                {block:HasPages}
+                  {block:Pages}
+                    <li><a href="{URL}">{Label}</a></li>
+                  {/block:Pages}
+                {/block:HasPages}
               </ul>
               
               <ul id="days">
                 <li><a id="heute" href="">Heute</a></li>
                 <li><a id="morgen" href="">Morgen</a></li>
               </ul>
-               
-              {block:HasPages}
-                {block:Pages}
-                  <a href="{URL}">{Label}</a>
-                {/block:Pages}
-              {/block:HasPages}
               
-              {block:AskEnabled}
-                <a href="/ask">{AskLabel}</a>
-              {/block:AskEnabled}
-              {block:SubmissionsEnabled}
-              <a href="/submit">{SubmitLabel}</a>
-              {/block:SubmissionsEnabled}
+              <ul>
+                {block:AskEnabled}
+                  <li><a href="/ask">{AskLabel}</a></li>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                  <li><a href="/submit">{SubmitLabel}</a></li>
+                {/block:SubmissionsEnabled}                
+              </ul>
+              
             </nav>
             
         </header>
@@ -104,14 +101,15 @@
 
         <!-- Add your site or application content here -->
         <%= javascript_include_tag  "all" %>
-        <%= javascript_include_tag  "kunsttag" %>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,"script"));
-        </script>
+        <!-- Google Tag Manager -->
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NT8QGV"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NT8QGV');</script>
+        <!-- End Google Tag Manager -->
     </body>
 </html>

@@ -96,6 +96,7 @@ $box-padding: 1.6em;
       .caption > *:first-child {
         color: $color;
         font-weight: 700;
+        font-size: 1.2em;
         margin-top: $box-padding;
       }
       .tags {
@@ -104,19 +105,19 @@ $box-padding: 1.6em;
     }
     
     &.konzerte {
-      @include category($color-konzerte, 'icon_konzerte_150.png');
+      @include category($color-konzerte, 'icon_konzerte.png');
     }
     
     &.theater {
-      @include category($color-theater, 'icon_theater_150.png');
+      @include category($color-theater, 'icon_theater.png');
     }
     
     &.kunst {
-      @include category($color-kunst, 'icon_kunst_150.png');
+      @include category($color-kunst, 'icon_kunst.png');
     }
     
     &.design {
-      @include category($color-design, 'icon_design_150.png');
+      @include category($color-design, 'icon_design.png');
     }
     
     .tags {

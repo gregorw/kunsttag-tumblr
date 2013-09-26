@@ -38,6 +38,13 @@ $color-design: #29A8E0;
   .post {
     width: 300px;
     display: block;
+    background: white;
+    @include box-shadow(0px 1px 6px rgba(0,0,0,0.2));
+    font-weight: 300;
+    
+    .text {
+      padding: 1em;
+    }
     
     &.photo {
       img {
@@ -55,47 +62,56 @@ $color-design: #29A8E0;
       background-repeat: no-repeat;
     }
     
-    border-bottom: 3px solid;
+    border-bottom: 0px solid;
+    
+    .caption {
+      margin: 0 1em 0;
+    }
+    
+    @mixin category($color, $image) {
+      .caption p:first-child {
+        color: $color;
+        font-weight: 700;
+      }
+      .tags {
+        background: white url('../images/#{$image}') bottom right no-repeat;
+      }
+    }
     
     &.konzerte {
-      .tag {
-        background-image: url('../images/icon_konzerte_150.png');
-      }
-      img + p {
-        color: $color-konzerte;
-      }
-      border-color: $color-konzerte;
+      @include category($color-konzerte, 'icon_konzerte_150.png');
     }
     
     &.theater {
-      .tag {
-        background-image: url('../images/icon_theater_150.png');
-      }
-      img + p {
-        color: $color-theater;
-      }
-      border-color: $color-theater;
+      @include category($color-theater, 'icon_theater_150.png');
     }
     
     &.kunst {
-      .tag {
-        background-image: url('../images/icon_kunst_150.png');
-      }
-      img + p {
-        color: $color-kunst;
-      }
-      border-color: $color-kunst;
+      @include category($color-kunst, 'icon_kunst_150.png');
     }
     
     &.design {
-      .tag {
-        background-image: url('../images/icon_design_150.png');
-      }
-      img + p {
-        color: $color-design;
-      }
-      border-color: $color-design;
+      @include category($color-design, 'icon_design_150.png');
     }
+    
+    .tags {
+      list-style-type: none;
+      margin: 1em;
+      padding: 0 60px 0 0;
+      min-height: 50px;
+      background-size: 50px 50px;
+      background-repeat: no-repeat;
+//      display: table-cell;
+//      vertical-align: bottom;
+      li {
+        font-size: 0.8em;
+        display: inline;
+        a {
+          color: #999;
+          margin-right: 0.5em;
+        }
+      }
+    }    
   }
 }
 
@@ -106,4 +122,5 @@ $color-design: #29A8E0;
 body {
   font-family: 'Roboto', sans-serif;
   padding: 1em;
+  background-image: url('../images/paper.png');
 }

@@ -3,10 +3,10 @@ $ ->
   options = 
     "autoResize": true,
     "align": "left",
-    "offset": 20,
+    "offset": 40,
     "flexibleWidth": 350,
     "resizeDelay": 25,
-    "fillEmptySpace": true,
+    # "fillEmptySpace": true,
     "container": $("#events")
 
   events = $(".post")

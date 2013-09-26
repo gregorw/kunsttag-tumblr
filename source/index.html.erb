@@ -1,7 +1,6 @@
 <section id="events">
   {block:Posts}
     <article class="post {PostType} {TagsAsClasses}">
-      <div class="tag"></div>
       {block:Text}
         {block:Title}
           <a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>
@@ -19,7 +18,7 @@
         {LinkCloseTag}
 
         {block:Caption}
-          {Caption}
+          <div class="caption">{Caption}</div>
         {/block:Caption}
       {/block:Photo}
 
@@ -27,7 +26,7 @@
         {Photoset-500}
 
         {block:Caption}
-          {Caption}
+          <div class="caption">{Caption}</div>
         {/block:Caption}
       {/block:Photoset}
 
@@ -72,7 +71,7 @@
         {AudioEmbed-640}
       
         {block:Caption}
-          {Caption}
+          <div class="caption">{Caption}</div>
         {/block:Caption}
       {/block:Audio}
 
@@ -81,7 +80,7 @@
         {Video-700}
 
         {block:Caption}
-          {Caption}
+          <div class="caption">{Caption}</div>
         {/block:Caption}
       {/block:Video} -->
 
@@ -93,28 +92,31 @@
 
       {block:Date}
         <footer>
-          <ul class="small">
+          {block:PermalinkPage}
+          <ul>
             <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
-            {block:RebloggedFrom}<li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>{/block:RebloggedFrom}
+            {block:RebloggedFrom}
+              <li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>
+            {/block:RebloggedFrom}
             {block:ContentSource}
               <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
             {/block:ContentSource}
           </ul>
-        
-          {block:PermalinkPage}
-              {block:HasTags}
-                  <ul class="tags">
-                    {block:Tags}
-                      <li>
-                        <a href="{TagURL}">#{Tag}</a>
-                      </li>
-                    {/block:Tags}
-                  </ul>
-              {/block:HasTags}      
           {/block:PermalinkPage}
+        
+          {block:HasTags}            
+            <ul class="tags">
+              {block:Tags}
+                <li>
+                  <a href="{TagURL}">#{Tag}</a>
+                </li>
+              {/block:Tags}
+            </ul>
+          {/block:HasTags}      
                       
         </footer>
       {/block:Date}
+      
     </article> <!-- /post -->     
 
     {block:PostNotes}

@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
 @import "compass";
 
+$image-path: 'http://44ft.com/kunsttag/images/';
 $color-konzerte: #EB1F78;
 $color-theater: #8AC440;
 $color-kunst: #FFAB00;
@@ -100,19 +101,19 @@ $box-padding: 1.6em;
         margin-top: $box-padding;
       }
       .tags {
-        background: white url('../images/#{$image}') bottom right no-repeat;
+        background: white url('#{$image-path}#{$image}') bottom right no-repeat;
       }
     }
     
-    &.konzerte {
+    &.konzert {
       @include category($color-konzerte, 'icon_konzerte.png');
     }
     
-    &.theater {
+    &.film_tanz_theater {
       @include category($color-theater, 'icon_theater.png');
     }
     
-    &.kunst {
+    &.kunst_und_medien {
       @include category($color-kunst, 'icon_kunst.png');
     }
     
@@ -148,7 +149,7 @@ $box-padding: 1.6em;
 body {
   font-family: 'Roboto', sans-serif;
   padding: 1em;
-  background-image: url('../images/paper.png');
+  background-image: url('#{$image-path}paper.png');
   
   > header {
     margin-bottom: 1em;

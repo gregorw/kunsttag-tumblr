@@ -1,6 +1,18 @@
 <section id="events">
   {block:Posts}
+  
+    {block:Post5}
+    <article class="post">
+      <a href="/submit">
+        <div class="caption">
+          Publiziere deinen eigenen Event
+        </div>
+      </a>
+    </article>
+    {/block:Post5}
+    
     <article class="post {PostType} {TagsAsClasses}">
+
       {block:Text}
         {block:Title}
           <a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>
@@ -14,7 +26,7 @@
 
       {block:Photo}
         {LinkOpenTag}
-          <img src="{PhotoURL-250}" alt="{PhotoAlt}">           
+          <img src="{PhotoURL-400}" alt="{PhotoAlt}">           
         {LinkCloseTag}
 
         {block:Caption}

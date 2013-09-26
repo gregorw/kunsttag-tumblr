@@ -3,8 +3,8 @@ $ ->
   options = 
     "autoResize": true,
     "align": "left",
-    "offset": 40,
-    "flexibleWidth": 350,
+    "offset": 30,
+    "flexibleWidth": 400,
     "resizeDelay": 25,
     # "fillEmptySpace": true,
     "container": $("#events")
@@ -15,7 +15,7 @@ $ ->
   $("#events").imagesLoaded ->
     events.wookmark options
 
-  $("#navigation-button").on 'click', ->
+  $("#navigation-toggle").on 'click', ->
     $("#navigation").toggle()
     
   $("#heute").attr('href', "/tagged/#{today()}")

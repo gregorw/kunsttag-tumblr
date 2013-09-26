@@ -54,50 +54,48 @@
     <body class="<%= page_classes %>">
         <header>
             <a id="logo" href="/" title="Home"><img src="/images/logo_kunsttag_150.png"></a>
-            <button id="navigation-button">
+            <button id="navigation-toggle">
               <span></span>
               <span></span>
               <span></span>
             </button>
+            
             <nav id="navigation">
               
-                <a class="konzerte" href="/konzerte">Konzerte</a>
-                <a class="film-tanz-theater" href="/film-tanz-theater">Film, Tanz, Theater</a>
-                <a class="kunst-und-medien" href="/kunst-und-medien">Kunst &amp; Medien</a>
-                <a class="design" href="/design">Design</a>
-
-                <a id="heute" href="">Heute</a>
-                <a id="morgen" href="">Morgen</a>
-                
-                {block:HasPages}
-                  {block:Pages}
-                    <a href="{URL}">{Label}</a>
-                  {/block:Pages}
-                {/block:HasPages}
-                {block:AskEnabled}
-                  <a href="/ask">{AskLabel}</a>
-                {/block:AskEnabled}
+              <ul id="categories">
+                <li><a class="konzerte" href="/konzerte">Konzerte</a></li>
+                <li><a class="film-tanz-theater" href="/film-tanz-theater">Film, Tanz, Theater</a></li>
+                <li><a class="kunst-und-medien" href="/kunst-und-medien">Kunst &amp; Medien</a></li>
+                <li><a class="design" href="/design">Design</a></li>
+              </ul>
+              
+              <ul id="cities"> 
+                <li><a href="/zurich">Zürich</a></li>
+                <li><a href="/berlin">Berlin</a></li>
+                <li><a href="/basel">Basel</a></li>
+                <li><a href="/bern">Bern</a></li>
+                <li><a href="/luzern">Luzern</a></li>
+              </ul>
+              
+              <ul id="days">
+                <li><a id="heute" href="">Heute</a></li>
+                <li><a id="morgen" href="">Morgen</a></li>
+              </ul>
+               
+              {block:HasPages}
+                {block:Pages}
+                  <a href="{URL}">{Label}</a>
+                {/block:Pages}
+              {/block:HasPages}
+              
+              {block:AskEnabled}
+                <a href="/ask">{AskLabel}</a>
+              {/block:AskEnabled}
+              {block:SubmissionsEnabled}
+              <a href="/submit">{SubmitLabel}</a>
+              {/block:SubmissionsEnabled}
             </nav>
             
-            <select>
-              <optgroup label="Was">
-                <option>Konzerte</option>
-                <option>FTT</option>
-                <option>K&amp;M</option>
-                <option>Design</option>
-              </optgroup>
-              <optgroup label="Wo">
-                <option>Zürich</option>
-                <option>Berlin</option>
-                <option>Basel</option>
-                <option>Bern</option>
-                <option>Luzern</option>
-              </optgroup>
-              <optgroup label="Wann">
-                <option>Heute</option>
-                <option>Morgen</option>
-              </optgroup>
-            </select>
         </header>
         
         <div>

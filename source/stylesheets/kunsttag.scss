@@ -6,27 +6,55 @@ $color-theater: #8AC440;
 $color-kunst: #FFAB00;
 $color-design: #29A8E0;
 
+$padding: 1em;
+$box-padding: 1.6em;
+
 #logo img {
   height: 3em;
 }
 
-#navigation-button {
+#navigation-toggle {
   float: right;
-  width: 2em;
+  width: 1.6em;
   height: 2em;
-  padding: none;
+  padding: 0;
+  margin-top: 0.5em;
   background: none;
   border: none;
   span {
     display: block;
     height: 5px;
-    margin: 3px 0 2px;
+    margin: 4px 0;
     background: black;
   }
 }
 
+@mixin shadow {
+  @include box-shadow(0px 1px 6px rgba(0,0,0,0.2));
+}
 #navigation {
   display: none;
+  font-weight: 300;
+  margin-bottom: 2em;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1em -1em;
+    @include shadow;
+    
+    li {
+      padding: 0;
+      background: white;
+      border-bottom: 1px solid #eee;
+      
+      a {
+        display: block;
+        padding: ($padding / 2) $padding;
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 #events {
@@ -36,15 +64,11 @@ $color-design: #29A8E0;
   position: relative;
   
   .post {
-    width: 300px;
+    width: 200px;
     display: block;
     background: white;
-    @include box-shadow(0px 1px 6px rgba(0,0,0,0.2));
     font-weight: 300;
-    
-    .text {
-      padding: 1em;
-    }
+    @include shadow;
     
     &.photo {
       img {
@@ -65,13 +89,14 @@ $color-design: #29A8E0;
     border-bottom: 0px solid;
     
     .caption {
-      margin: 0 1em 0;
+      margin: $box-padding;
     }
     
     @mixin category($color, $image) {
-      .caption p:first-child {
+      .caption > *:first-child {
         color: $color;
         font-weight: 700;
+        margin-top: $box-padding;
       }
       .tags {
         background: white url('../images/#{$image}') bottom right no-repeat;
@@ -96,7 +121,7 @@ $color-design: #29A8E0;
     
     .tags {
       list-style-type: none;
-      margin: 1em;
+      margin: $box-padding;
       padding: 0 60px 0 0;
       min-height: 50px;
       background-size: 50px 50px;
@@ -123,4 +148,8 @@ body {
   font-family: 'Roboto', sans-serif;
   padding: 1em;
   background-image: url('../images/paper.png');
+  
+  > header {
+    margin-bottom: 1em;
+  }
 }

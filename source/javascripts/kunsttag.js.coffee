@@ -1,17 +1,22 @@
 # Kunsttag – © 2013 Gregor Wassmann
 $ ->
-  options = 
-    "autoResize": true,
-    "align": "left",
-    "offset": 30,
-    "flexibleWidth": 400,
-    "resizeDelay": 25,
-    # "fillEmptySpace": true,
-    "container": $("#events")
+  index_options = 
+    autoResize: true,
+    offset: 30,
+    flexibleWidth: 300,
+    resizeDelay: 25,
+    container: $("#events")
 
+  permalink_options = $.extend({}, index_options, { flexibleWidth: 600 })
+  
+  # Index Page
+  if $('body.index').length == 1
+    options = index_options
+  else 
+    options = permalink_options
+  
   events = $(".post")
   events.wookmark options
-  
   $("#events").imagesLoaded ->
     events.wookmark options
 
@@ -31,4 +36,3 @@ tomorrow = ->
 swissDate = (days_from_now = 0, date = new Date()) ->
   date.setDate(date.getDate() + days_from_now)
   [date.getDate(), date.getMonth() + 1, date.getFullYear()].join '.'
- 

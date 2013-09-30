@@ -45,9 +45,11 @@
         <%= javascript_include_tag  "modernizr-2.6.2.min" %>
 
     </head>
-    <body class="<%= page_classes %>">
+    <body class="{block:IndexPage}index{/block:IndexPage} {block:PermalinkPage}permalink{/block:PermalinkPage}">
         <header>
-            <a id="logo" href="/" title="Home"><img src="http://44ft.com/kunsttag/images/logo_kunsttag_150.png"></a>
+          <div class="padded">
+            
+            <a id="logo" href="/" title="Home"><img src="http://44ft.com/kunsttag/images/logo_kunsttag_150.png" /></a>
             <button id="navigation-toggle">
               <span></span>
               <span></span>
@@ -57,9 +59,9 @@
             <nav id="navigation">
               
               <ul id="categories">
-                <li><a class="konzerte" href="/konzerte">Konzerte</a></li>
-                <li><a class="film-tanz-theater" href="/film-tanz-theater">Film, Tanz, Theater</a></li>
-                <li><a class="kunst-und-medien" href="/kunst-und-medien">Kunst &amp; Medien</a></li>
+                <li><a class="konzerte" href="/tagged/konzert">Konzerte</a></li>
+                <li><a class="film-tanz-theater" href="/tagged/film-tanz-theater">Film, Tanz, Theater</a></li>
+                <li><a class="kunst-und-medien" href="/tagged/kunst-und-medien">Kunst &amp; Medien</a></li>
                 <li><a class="design" href="/design">Design</a></li>
               </ul>
               
@@ -87,6 +89,7 @@
               
             </nav>
             
+          </div>
         </header>
         
         <div>

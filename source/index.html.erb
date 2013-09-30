@@ -1,34 +1,44 @@
 <section id="events">
   {block:Posts}
   
-    {block:Post5}
+    <!-- Add your own event -->
+    {block:Post9}
     <article class="post">
       <a href="/submit">
         <div class="caption">
-          Publiziere deinen eigenen Event
+          {SubmitLabel}
         </div>
       </a>
     </article>
-    {/block:Post5}
+    {/block:Post9}
     
     <article class="post {PostType} {TagsAsClasses}">
 
       {block:Text}
-        {block:Title}
-          <a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>
-        {/block:Title}
+        <div class="padded">
+          {block:Title}
+            <a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>
+          {/block:Title}
       
-        {Body}
+          {Body}
       
-        {block:More}<a href="{Permalink}" class="p">Read More &raquo;</a>{/block:More}
-      
+          {block:More}<a href="{Permalink}">Weiterlesen &raquo;</a>{/block:More}
+        </div>
       {/block:Text}
 
       {block:Photo}
-        {LinkOpenTag}
-          <img src="{PhotoURL-400}" alt="{PhotoAlt}">           
-        {LinkCloseTag}
-
+        {block:IndexPage}
+          <a href="{Permalink}">
+            <img src="{PhotoURL-400}" alt="{PhotoAlt}">
+          </a>
+        {/block:IndexPage}
+      
+        {block:PermalinkPage}
+          {LinkOpenTag}
+            <img src="{PhotoURL-400}" alt="{PhotoAlt}">           
+          {LinkCloseTag}
+        {/block:PermalinkPage}
+        
         {block:Caption}
           <div class="caption">{Caption}</div>
         {/block:Caption}
@@ -53,35 +63,35 @@
       {/block:Quote}
 
       {block:Link}
-        <h2><a href="{URL}"{Target}>{Name} &raquo;</a></h2>
-
-        {block:Description}
-          {Description}
-        {/block:Description}
+        <div class="padded">
+          <h2><a href="{URL}"{Target}>{Name} &raquo;</a></h2>
+  
+          {block:Description}
+            {Description}
+          {/block:Description}
+        </div>
       {/block:Link}
 
       {block:Chat}
-        {block:Title}
-          <h2>{Title}</h2>
-        {/block:Title}
-
-        <ul>
-          {block:Lines}
-            <li class="{Alt}">
-              {block:Label}
+        <div class="padded">        
+          {block:Title}
+            <h2>{Title}</h2>
+          {/block:Title}
+          <ul>
+            {block:Lines}
+              <li class="{Alt}">
+                {block:Label}
                   <b>{Label}</b>
-              {/block:Label}
-
-              {Line}
-            </li>
-          {/block:Lines}
-        </ul>
+                {/block:Label}
+                {Line}
+              </li>
+            {/block:Lines}
+          </ul>
+        </div>
       {/block:Chat}
 
       {block:Audio}
-      
         {AudioEmbed-640}
-      
         {block:Caption}
           <div class="caption">{Caption}</div>
         {/block:Caption}
@@ -90,16 +100,16 @@
 
       {block:Video}
         {Video-700}
-
-        {block:Caption}
+        <!-- {block:Caption}
           <div class="caption">{Caption}</div>
-        {/block:Caption}
+        {/block:Caption} -->
       {/block:Video}
 
       {block:Answer}
-        <h2>{Asker} asked: <q>{Question}</q></h2>
-
-        {Answer}
+        <div class="padded">
+          <h2>{Asker} asked: <q>{Question}</q></h2>
+          {Answer}
+        </div>
       {/block:Answer}
 
       {block:Date}

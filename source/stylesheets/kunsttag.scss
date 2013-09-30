@@ -2,16 +2,25 @@
 @import "compass";
 
 $image-path: 'http://44ft.com/kunsttag/images/';
+//$image-path: '../images/';
 $color-konzerte: #EB1F78;
 $color-theater: #8AC440;
 $color-kunst: #FFAB00;
 $color-design: #29A8E0;
 
 $padding: 1em;
+$vertical-padding: 1.6em;
 $box-padding: 1.6em;
 
 #logo img {
-  height: 3em;
+  height: 2em;
+}
+
+@mixin padded {
+  padding: $box-padding;
+}
+.padded {
+  @include padded;
 }
 
 #navigation-toggle {
@@ -19,7 +28,6 @@ $box-padding: 1.6em;
   width: 1.6em;
   height: 2em;
   padding: 0;
-  margin-top: 0.5em;
   background: none;
   border: none;
   span {
@@ -47,7 +55,9 @@ $box-padding: 1.6em;
       padding: 0;
       background: white;
       border-bottom: 1px solid #eee;
-      
+      &:last-child {
+        border-bottom-width: 0;
+      }
       a {
         display: block;
         padding: ($padding / 2) $padding;
@@ -63,13 +73,14 @@ $box-padding: 1.6em;
   //  -webkit-column-count:4; /* Safari and Chrome */
   //  column-count:4;
   position: relative;
+  margin-top: 6em;
   
   .post {
     width: 200px;
     display: block;
     background: white;
     font-weight: 300;
-    @include shadow;
+//    @include shadow;
     
     &.photo {
       img {
@@ -87,7 +98,7 @@ $box-padding: 1.6em;
       background-repeat: no-repeat;
     }
     
-    border-bottom: 0px solid;
+    border: 3px solid #eee;
     
     .caption {
       margin: $box-padding;
@@ -103,6 +114,7 @@ $box-padding: 1.6em;
       .tags {
         background: white url('#{$image-path}#{$image}') bottom right no-repeat;
       }
+      border-color: $color;
     }
     
     &.konzert {
@@ -128,8 +140,6 @@ $box-padding: 1.6em;
       min-height: 50px;
       background-size: 50px 50px;
       background-repeat: no-repeat;
-//      display: table-cell;
-//      vertical-align: bottom;
       li {
         font-size: 0.8em;
         display: inline;
@@ -148,10 +158,17 @@ $box-padding: 1.6em;
 
 body {
   font-family: 'Roboto', sans-serif;
-  padding: 1em;
-  background-image: url('#{$image-path}paper.png');
-  
+  padding: $vertical-padding $padding;
+//  background-image: url('#{$image-path}paper.png');
+  background-attachment: fixed;
+//  background-color: #fdfdfd;
   > header {
-    margin-bottom: 1em;
+    margin: (-$vertical-padding) (-$padding);
+    position: fixed;
+    z-index: 1;
+    height: 5em;
+    width: 100%;
+    @include shadow;
+    background: rgba(255,255,255,0.98);
   }
 }

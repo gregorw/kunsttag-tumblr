@@ -3,7 +3,7 @@
 
 $image-path: 'http://44ft.com/kunsttag/images/';
 //$image-path: '../images/';
-$color-konzerte: #EB1F78;
+$color-konzert: #EB1F78;
 $color-theater: #8AC440;
 $color-kunst: #FFAB00;
 $color-design: #29A8E0;
@@ -12,35 +12,93 @@ $padding: 1em;
 $vertical-padding: 1.6em;
 $box-padding: 1.6em;
 
-#logo img {
-  height: 2em;
+a {
+  color: $color-design;
+  &:visited, &:active {
+    color: #EB1F78;
+  }
+}
+
+#logo {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  img {
+    height: 2.6em;
+  }
 }
 
 @mixin padded {
   padding: $box-padding;
 }
+
 .padded {
   @include padded;
+  *:first-child {
+    margin-top: 0;
+  }
 }
 
-#navigation-toggle {
-  float: right;
-  width: 1.6em;
+header button {
   height: 2em;
   padding: 0;
   background: none;
   border: none;
-  span {
-    display: block;
-    height: 5px;
-    margin: 4px 0;
-    background: black;
+  margin-top: 0.3em;
+  
+  &#add-event {
+    float: right;
+    a {
+      background: $color-theater;
+      padding: 0.3em 0.9em;
+      @include border-radius(1em);
+      color: white;
+      font-weight: 300;
+      text-decoration: none;
+      &:hover {
+        background: $color-konzert;
+      }
+    }
+  }
+  
+  &#navigation-toggle {
+    float: left;
+    width: 1.6em;
+
+    span {
+      display: block;
+      height: 5px;
+      margin: 4px 0;
+      background: black;
+    }
   }
 }
 
 @mixin shadow {
   @include box-shadow(0px 1px 6px rgba(0,0,0,0.2));
 }
+
+@mixin centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-plugins {
+  margin: $vertical-padding 0;
+}
+
+.disqus {
+  margin: $vertical-padding 0;
+}
+
+#pagination {
+  @include centered;
+  text-align: center;
+  width: 280px;
+  margin: $vertical-padding auto;
+}
+
 #navigation {
   display: none;
   font-weight: 300;
@@ -48,7 +106,7 @@ $box-padding: 1.6em;
   ul {
     list-style-type: none;
     padding: 0;
-    margin: 1em -1em;
+    margin: $padding 0;
     @include shadow;
     
     li {
@@ -68,12 +126,26 @@ $box-padding: 1.6em;
   }
 }
 
+#main {
+  margin-top: 2em;
+  .scrolled & {
+    margin-top: 4em;
+  }
+}
+
+.permalink #events {
+  @include centered;
+  max-width: 500px;
+  .post {
+    width: 100%;
+  }
+}
+
 #events {
   //  -moz-column-count:4; /* Firefox */
   //  -webkit-column-count:4; /* Safari and Chrome */
   //  column-count:4;
   position: relative;
-  margin-top: 6em;
   
   .post {
     width: 200px;
@@ -118,7 +190,7 @@ $box-padding: 1.6em;
     }
     
     &.konzert {
-      @include category($color-konzerte, 'icon_konzerte.png');
+      @include category($color-konzert, 'icon_konzerte.png');
     }
     
     &.film_tanz_theater {
@@ -158,17 +230,23 @@ $box-padding: 1.6em;
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   padding: $vertical-padding $padding;
-//  background-image: url('#{$image-path}paper.png');
   background-attachment: fixed;
-//  background-color: #fdfdfd;
   > header {
-    margin: (-$vertical-padding) (-$padding);
-    position: fixed;
-    z-index: 1;
-    height: 5em;
-    width: 100%;
-    @include shadow;
-    background: rgba(255,255,255,0.98);
+
+  }
+  &.scrolled {
+    header {
+      position: fixed;
+      z-index: 1;
+      margin: (-$vertical-padding) (-$padding);
+      width: 100%;
+      @include shadow;
+      background: rgba(255,255,255,0.98);
+      #navbar {
+        padding: $padding;
+      }
+    }
   }
 }

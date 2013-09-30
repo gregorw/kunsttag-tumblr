@@ -18,6 +18,7 @@
         <meta name="color:Film Tanz Theater" content="#8AC440"/>
         <meta name="color:Kunst und Medien" content="#FFAB00"/>
         <meta name="color:Design" content="#29A8E0"/>
+        <meta name='text:Disqus Shortname' content='' />
 
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
@@ -46,53 +47,84 @@
 
     </head>
     <body class="{block:IndexPage}index{/block:IndexPage} {block:PermalinkPage}permalink{/block:PermalinkPage}">
+        <!-- Facebook -->
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            // init the FB JS SDK
+            FB.init({
+              appId      : 'YOUR_APP_ID',                        // App ID from the app dashboard
+              channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
+              status     : true,                                 // Check Facebook Login status
+              xfbml      : true                                  // Look for social plugins on the page
+            });
+
+            // Additional initialization code such as adding Event Listeners goes here
+          };
+
+          // Load the SDK asynchronously
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/all.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+      
         <header>
-          <div class="padded">
+          <div id="navbar">
             
-            <a id="logo" href="/" title="Home"><img src="http://44ft.com/kunsttag/images/logo_kunsttag_150.png" /></a>
             <button id="navigation-toggle">
               <span></span>
               <span></span>
               <span></span>
             </button>
             
-            <nav id="navigation">
-              
-              <ul id="categories">
-                <li><a class="konzerte" href="/tagged/konzert">Konzerte</a></li>
-                <li><a class="film-tanz-theater" href="/tagged/film-tanz-theater">Film, Tanz, Theater</a></li>
-                <li><a class="kunst-und-medien" href="/tagged/kunst-und-medien">Kunst &amp; Medien</a></li>
-                <li><a class="design" href="/design">Design</a></li>
-              </ul>
-              
-              <ul id="cities">
-                {block:HasPages}
-                  {block:Pages}
-                    <li><a href="{URL}">{Label}</a></li>
-                  {/block:Pages}
-                {/block:HasPages}
-              </ul>
-              
-              <ul id="days">
-                <li><a id="heute" href="">Heute</a></li>
-                <li><a id="morgen" href="">Morgen</a></li>
-              </ul>
-              
-              <ul>
-                {block:AskEnabled}
-                  <li><a href="/ask">{AskLabel}</a></li>
-                {/block:AskEnabled}
-                {block:SubmissionsEnabled}
-                  <li><a href="/submit">{SubmitLabel}</a></li>
-                {/block:SubmissionsEnabled}                
-              </ul>
-              
-            </nav>
+            <button id="add-event">
+              {block:SubmissionsEnabled}
+                <a href="/submit" title="">{SubmitLabel}</a>
+              {/block:SubmissionsEnabled}    
+            </button>
+
+            <a id="logo" href="/" title="Home"><img src="http://44ft.com/kunsttag/images/logo_kunsttag_150.png" /></a>
             
           </div>
+            
+          <div class="fb-like" data-href="http://kunsttag.com" data-width="400" data-layout="button_count" data-show-faces="false" data-send="true"></div>
+            
+          <nav id="navigation">
+          
+            <ul id="categories">
+              <li><a class="konzerte" href="/tagged/konzert">Konzerte</a></li>
+              <li><a class="film-tanz-theater" href="/tagged/film-tanz-theater">Film, Tanz, Theater</a></li>
+              <li><a class="kunst-und-medien" href="/tagged/kunst-und-medien">Kunst &amp; Medien</a></li>
+              <li><a class="design" href="/design">Design</a></li>
+            </ul>
+          
+            <ul id="cities">
+              {block:HasPages}
+                {block:Pages}
+                  <li><a href="{URL}">{Label}</a></li>
+                {/block:Pages}
+              {/block:HasPages}
+            </ul>
+          
+            <ul id="days">
+              <li><a id="heute" href="">Heute</a></li>
+              <li><a id="morgen" href="">Morgen</a></li>
+            </ul>
+          
+            <ul>
+              {block:AskEnabled}
+                <li><a href="/ask">{AskLabel}</a></li>
+              {/block:AskEnabled}            
+            </ul>
+          
+          </nav>
         </header>
         
-        <div>
+        <div id="main">          
           <%= yield %>          
         </div>
 

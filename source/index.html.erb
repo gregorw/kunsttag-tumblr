@@ -131,9 +131,10 @@
       
     </article> <!-- /post -->     
 
-    {block:PermalinkPage}
+    <!-- Only rendered for posts -->
+    {block:Date}
       <aside id="social">
-        <div class="fb-like" data-href="" data-width="350" data-layout="button_count" data-show-faces="false" data-send="true"></div>
+        <div class="fb-like" data-href="xxx" data-width="350" data-layout="button_count" data-show-faces="false" data-send="true"></div>
       
         <ul>
           <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
@@ -146,7 +147,7 @@
         </ul>
       
       </aside>
-    {/block:PermalinkPage}
+    {/block:Date}
 
     {block:PostNotes}
       <aside class="notes">
@@ -156,6 +157,7 @@
     {/block:PostNotes}
 
     {block:PermalinkPage}
+    {block:Date}
       { block:IfDisqusShortname}
       <aside class="disqus">
         <div id="disqus_thread"></div>
@@ -174,7 +176,9 @@
         <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
       </aside>
       { /block:IfDisqusShortname}
+    {/block:Date}
     {/block:PermalinkPage}
+
   {/block:Posts}
 
 </section>

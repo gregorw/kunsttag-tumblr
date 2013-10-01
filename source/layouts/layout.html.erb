@@ -47,6 +47,7 @@
 
     </head>
     <body class="{block:IndexPage}index{/block:IndexPage} {block:PermalinkPage}permalink{/block:PermalinkPage}">
+      <div id="fb-root"></div>
       
         <header>
           <div id="navbar">
@@ -99,7 +100,7 @@
               {block:AskEnabled}
                 <li><a href="/ask">{AskLabel}</a></li>
               {/block:AskEnabled}      
-              <li><a href="/newsletter">Newsletter</a></li>      
+              <li><a href="/subscribe">Newsletter</a></li>      
             </ul>
           
           </nav>
@@ -108,7 +109,7 @@
         <div id="main">          
           <%= yield %>          
         </div>
-
+                
         <!-- Add your site or application content here -->
         <%= javascript_include_tag  "all" %>
 

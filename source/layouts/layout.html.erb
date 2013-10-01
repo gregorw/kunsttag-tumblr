@@ -47,30 +47,6 @@
 
     </head>
     <body class="{block:IndexPage}index{/block:IndexPage} {block:PermalinkPage}permalink{/block:PermalinkPage}">
-        <!-- Facebook -->
-        <div id="fb-root"></div>
-        <script>
-          window.fbAsyncInit = function() {
-            // init the FB JS SDK
-            FB.init({
-              appId      : 'YOUR_APP_ID',                        // App ID from the app dashboard
-              channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
-              status     : true,                                 // Check Facebook Login status
-              xfbml      : true                                  // Look for social plugins on the page
-            });
-
-            // Additional initialization code such as adding Event Listeners goes here
-          };
-
-          // Load the SDK asynchronously
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/all.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
       
         <header>
           <div id="navbar">
@@ -83,7 +59,8 @@
             
             <button id="add-event">
               {block:SubmissionsEnabled}
-                <a href="/submit" title="">{SubmitLabel}</a>
+                <a href="/submit" class="desktop" title="{SubmitLabel}">{SubmitLabel}</a>
+                <a href="/submit" class="mobile" title="{SubmitLabel}">+</a>                
               {/block:SubmissionsEnabled}    
             </button>
 
@@ -94,9 +71,9 @@
           <nav id="navigation">
           
             <ul id="categories">
-              <li><a class="konzerte" href="/tagged/konzert">Konzerte</a></li>
-              <li><a class="film-tanz-theater" href="/tagged/film-tanz-theater">Film, Tanz, Theater</a></li>
-              <li><a class="kunst-und-medien" href="/tagged/kunst-und-medien">Kunst &amp; Medien</a></li>
+              <li><a class="konzert" href="/tagged/konzert">Konzerte</a></li>
+              <li><a class="film_tanz_theater" href="/tagged/film-tanz-theater">Film, Tanz, Theater</a></li>
+              <li><a class="kunst_und_medien" href="/tagged/kunst-und-medien">Kunst &amp; Medien</a></li>
               <li><a class="design" href="/tagged/design">Design</a></li>
             </ul>
           
@@ -106,6 +83,11 @@
                   <li><a href="{URL}">{Label}</a></li>
                 {/block:Pages}
               {/block:HasPages}
+              <li><a href="">Zurich</a></li>
+              <li><a href="">Berlin</a></li>
+              <li><a href="">Basel</a></li>
+              <li><a href="">Bern</a></li>
+              <li><a href="">Luzern</a></li>
             </ul>
           
             <ul id="days">
@@ -113,10 +95,11 @@
               <li><a id="morgen" href="">Morgen</a></li>
             </ul>
           
-            <ul>
+            <ul id="more-links">
               {block:AskEnabled}
                 <li><a href="/ask">{AskLabel}</a></li>
-              {/block:AskEnabled}            
+              {/block:AskEnabled}      
+              <li><a href="/newsletter">Newsletter</a></li>      
             </ul>
           
           </nav>

@@ -20,7 +20,7 @@ $ ->
     options = permalink_options
 
   $("#navigation-toggle").on 'click', ->
-    $("#navigation").toggle()
+    $("body").toggleClass("nav-open", $("#navigation").toggle())
     
   $("#heute").attr('href', "/tagged/#{today()}")
   $("#morgen").attr('href', "/tagged/#{tomorrow()}")

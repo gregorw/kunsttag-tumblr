@@ -3,3 +3,4 @@
 //= require imagesloaded.pkgd
 //= require helper
 //= require kunsttag
+//= require social

@@ -132,8 +132,8 @@
     </article> <!-- /post -->     
 
     {block:PermalinkPage}
-      <aside class="social-plugins">
-        <div class="fb-like" data-href="http://kunsttag.com" data-width="400" data-layout="button_count" data-show-faces="false" data-send="true"></div>
+      <aside id="social">
+        <div class="fb-like" data-href="" data-width="350" data-layout="button_count" data-show-faces="false" data-send="true"></div>
       
         <ul>
           <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
@@ -171,7 +171,7 @@
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <!-- <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> -->
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
       </aside>
       { /block:IfDisqusShortname}
     {/block:PermalinkPage}

@@ -1,14 +1,13 @@
 $ ->
-  devmode = true
+  devmode = false
   url = document.location.href.split('?')[0]
             
   if $('.fb-like').length > 0
-    $('.fb-like').data('href', url)
-    # createScript 'facebook-jssdk', '//connect.facebook.net/en_US/all.js' # localhost
+    $('.fb-like').attr('data-href', url)
     
   if $('.twitter-share-button').length > 0
     $('.twitter-share-button').data('url', url)
-    # createScript 'twitter-wjs', '//platform.twitter.com/widgets.js'
+    createScript 'twitter-wjs', '//platform.twitter.com/widgets.js'
     
   $.ajaxSetup
     cache: true
@@ -35,3 +34,4 @@ createScript = (id, src) ->
   js.src = src
   fjs = $('script:first')[0]
   fjs.parentNode.insertBefore js, fjs
+

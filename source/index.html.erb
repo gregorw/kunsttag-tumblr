@@ -131,31 +131,22 @@
       
     </article> <!-- /post -->     
 
-    <aside class="social-plugins">
-      <a href="#" 
-        onclick="
-          window.open(
-            'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-            'facebook-share-dialog', 
-            'width=626,height=436'); 
-          return false;">
-        Share on Facebook
-      </a>
+    {block:PermalinkPage}
+      <aside class="social-plugins">
+        <div class="fb-like" data-href="http://kunsttag.com" data-width="400" data-layout="button_count" data-show-faces="false" data-send="true"></div>
       
+        <ul>
+          <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
+          {block:RebloggedFrom}
+            <li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>
+          {/block:RebloggedFrom}
+          {block:ContentSource}
+            <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
+          {/block:ContentSource}
+        </ul>
       
-      {block:PermalinkPage}
-      <ul>
-        <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
-        {block:RebloggedFrom}
-          <li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>
-        {/block:RebloggedFrom}
-        {block:ContentSource}
-          <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
-        {/block:ContentSource}
-      </ul>
-      {/block:PermalinkPage}
-      
-    </aside>
+      </aside>
+    {/block:PermalinkPage}
 
     {block:PostNotes}
       <aside class="notes">

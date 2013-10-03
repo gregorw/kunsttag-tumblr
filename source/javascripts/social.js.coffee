@@ -5,10 +5,6 @@ $ ->
   if $('.fb-like').length > 0
     $('.fb-like').attr('data-href', url)
     
-  if $('.twitter-share-button').length > 0
-    $('.twitter-share-button').data('url', url)
-    createScript 'twitter-wjs', '//platform.twitter.com/widgets.js'
-    
   $.ajaxSetup
     cache: true
 
@@ -16,13 +12,13 @@ $ ->
     if devmode
       FB.init
         appId      : '301556923316152'                     # App ID from the app dashboard
-        channelUrl : '//localhost:4567/channel.html'       # Channel file for x-domain comms
+        channelUrl : 'http://localhost:4567/channel.html'       # Channel file for x-domain comms
         status     : true                                  # Check Facebook Login status
         xfbml      : true                                  # Look for social plugins on the page
     else
       FB.init
         appId      : '358683750907560'                     # App ID from the app dashboard
-        channelUrl : '//kunsttag.com/channel.html'         # Channel file for x-domain comms
+        channelUrl : 'http://kunsttag.com/channel.html'         # Channel file for x-domain comms
         status     : true                                  # Check Facebook Login status
         xfbml      : true                                  # Look for social plugins on the page
 

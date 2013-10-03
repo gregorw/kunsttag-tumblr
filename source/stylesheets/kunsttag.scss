@@ -12,21 +12,14 @@ $padding: 1em;
 $vertical-padding: 1.6em;
 $box-padding: 1.6em;
 
-a {
-  color: $color-design;
-  &:visited, &:active {
-    color: #EB1F78;
-  }
+
+@mixin shadow {
+  @include box-shadow(0px 1px 6px rgba(0,0,0,0.2));
 }
 
-#logo {
-  display: block;
-  width: 300px;
-  margin: 0 auto;
-  text-align: center;
-  img {
-    height: 2.6em;
-  }
+@mixin centered {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin padded {
@@ -38,6 +31,39 @@ a {
   *:first-child {
     margin-top: 0;
   }
+}
+
+a {
+  color: $color-design;
+  &:visited, &:active {
+    color: #EB1F78;
+  }
+}
+
+#logo {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  img {
+    height: 2.6em;
+  }
+}
+
+#newsletter {
+  margin: 1em auto;
+  padding: $vertical-padding $padding;
+  width: 300px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  background: white;
+  z-index: 2;
+  @include border-radius(1em);
+  @include shadow;
 }
 
 header button {
@@ -81,17 +107,15 @@ header button {
   }
 }
 
-@mixin shadow {
-  @include box-shadow(0px 1px 6px rgba(0,0,0,0.2));
-}
-
-@mixin centered {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #social {
   margin: $vertical-padding 0;
+  .fb-like, .tweet-button {
+    float: right;
+  }
+  .details {
+    padding-left: 0;
+    list-style-type: none;
+  }
 }
 
 ol.notes {
@@ -138,18 +162,29 @@ ol.notes {
     }
     
     li {
+      font-size: 0.9em;
       padding: 0;
       border-bottom: 1px solid #eee;
       &:last-child {
         border-bottom-width: 0;
       }
       a {
-        font-size: 0.9em;
         display: block;
         padding: ($padding / 2) $padding;
         color: black;
         text-decoration: none;
         
+      }
+      &#newsletter-nav {
+        padding: ($padding / 2) $padding;
+        .email {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 300;
+          width: 100%;
+          padding: 0;
+          margin: ($padding / 2) 0;
+          border: 0;
+        }
       }
     }
   }
@@ -157,6 +192,17 @@ ol.notes {
   .film_tanz_theater { @include text-highlight($color-theater); }
   .kunst_und_medien { @include text-highlight($color-kunst); }
   .design { @include text-highlight($color-design); }
+}
+
+input.btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  border: 1px solid #eee;
+  @include border-radius(14px);
+  padding: 0.2em 0.8em;
+  font-size: 0.9em;
+  color: white;
+  background: $color-konzert;
 }
 
 #main {
@@ -175,9 +221,6 @@ ol.notes {
 }
 
 #events {
-  //  -moz-column-count:4; /* Firefox */
-  //  -webkit-column-count:4; /* Safari and Chrome */
-  //  column-count:4;
   position: relative;
   
   .post {

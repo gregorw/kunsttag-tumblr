@@ -42,7 +42,7 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
         -->
           
-        <link href="http://static.tumblr.com/ydub3ah/apGmtzuwi/all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://static.tumblr.com/ydub3ah/zVXmu35zg/all.css" media="screen" rel="stylesheet" type="text/css" />
         <script src="http://static.tumblr.com/ydub3ah/ZdOmty3hy/modernizr-2.6.2.min.js" type="text/javascript"></script>
 
     </head>
@@ -84,11 +84,6 @@
                   <li><a href="{URL}">{Label}</a></li>
                 {/block:Pages}
               {/block:HasPages}
-              <li><a href="">Zurich</a></li>
-              <li><a href="">Berlin</a></li>
-              <li><a href="">Basel</a></li>
-              <li><a href="">Bern</a></li>
-              <li><a href="">Luzern</a></li>
             </ul>
           
             <ul id="days">
@@ -100,7 +95,15 @@
               {block:AskEnabled}
                 <li><a href="/ask">{AskLabel}</a></li>
               {/block:AskEnabled}      
-              <li><a href="/subscribe">Newsletter</a></li>      
+              <li id="newsletter-nav">
+                Newsletter
+                <div id="mc_embed_signup">
+                  <form action="http://kunsttag.us6.list-manage1.com/subscribe/post?u=59104d76d7&amp;id=ac3acd785f" class="novalidate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+                    <input class="email span4" id="mce-EMAIL" name="EMAIL" placeholder="E-Mail-Adresse" required="" type="email" value=""><br>
+                    <input class="btn" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Abonnieren">      
+                  </form>
+                </div>
+              </li>      
             </ul>
           
           </nav>
@@ -245,10 +248,13 @@
       {block:Date}
         <aside id="social">
           <div class="fb-like" data-href="xxx" data-width="350" data-layout="button_count" data-show-faces="false" data-send="true"></div>
-          <div class="tweet-button"><a href="https://twitter.com/share" class="twitter-share-button" data-via="kunsttag_CH" data-lang="de">Twittern</a></div>
+          <div class="tweet-button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="kunsttagCH" data-lang="de">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
         
-          <ul>
-            <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
+          <ul class="details">
+            <li><span title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</span></li>
             {block:RebloggedFrom}
               <li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>
             {/block:RebloggedFrom}
@@ -304,7 +310,7 @@
         </div>
                 
         <!-- Add your site or application content here -->
-        <script src="/javascripts/all.js" type="text/javascript"></script>
+        <script src="http://static.tumblr.com/ydub3ah/TKimu35yo/all.js" type="text/javascript"></script>
 
         <!-- Google Tag Manager -->
         <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NT8QGV"

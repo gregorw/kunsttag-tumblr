@@ -25,6 +25,10 @@ $ ->
   $("#heute").attr('href', "/tagged/#{today()}")
   $("#morgen").attr('href', "/tagged/#{tomorrow()}")
 
+  if $('#submit_form').length > 0
+    # Fix hidden submit button on mobile
+    $('#submit_form').attr('height', '620px') 
+    
   window.onscroll = ->
     $('body').toggleClass 'scrolled', $('body').scrollTop() > 5
 

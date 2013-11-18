@@ -8,6 +8,7 @@
         {block:Description}
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
+        <meta name="robots" content="index, follow">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +37,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="{Title}">
        
-
         <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
         <!--
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
@@ -52,18 +52,18 @@
         <header>
           <div id="navbar">
             
-            <button id="navigation-toggle">
+            <button id="navigation-toggle" class="navitem">
               <span></span>
               <span></span>
               <span></span>
             </button>
             
-            <button id="add-event">
-              {block:SubmissionsEnabled}
-                <a href="/submit" class="desktop" title="{SubmitLabel}">{SubmitLabel}</a>
-                <a href="/submit" class="mobile" title="{SubmitLabel}">+</a>                
-              {/block:SubmissionsEnabled}    
-            </button>
+            {block:SubmissionsEnabled}
+            <a id="add-event" href="/submit" class="navitem">
+                <span class="desktop" title="{SubmitLabel}">{SubmitLabel}Erstelle deinen Event</span>
+                <span class="mobile" title="{SubmitLabel}">+</span>
+            </a>
+            {/block:SubmissionsEnabled}    
 
             <a id="logo" href="/" title="Home"><img src="http://44ft.com/kunsttag/images/logo_kunsttag_150.png" /></a>
             

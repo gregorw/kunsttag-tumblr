@@ -1,6 +1,7 @@
 = Kunsttag Tumblr Theme
 
-
+middleman server
+middleman build
 
 == Change log
 

@@ -8,53 +8,7 @@ activate :tumblargh,
   api_key: 'i41pISnf18m39MT1kMQLsRPC8mU7XcOem6eYALzkLcCoKgTtgm', # This is your OAuth consumer key
   blog: 'kunsttag.tumblr.com.json'
 
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
-###
-# Page options, layouts, aliases and proxies
-###
-
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
 page "/channel.html", layout: false
-
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
-
-# Proxy pages (http://middlemanapp.com/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
-
-###
-# Helpers
-###
-
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
-# Reload the browser automatically whenever files change
-# activate :livereload
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
 
 set :css_dir, 'stylesheets'
 
@@ -70,6 +24,11 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
+  # Fonts are on cyon cerver
+  set :images_dir, '//44ft.com/kunsttag_assets/'
+  set :css_dir, '//44ft.com/kunsttag_assets/'
+  set :js_dir, '//44ft.com/kunsttag_assets/'
+  
   # Enable cache buster
   # activate :asset_hash
 

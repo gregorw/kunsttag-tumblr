@@ -1,11 +1,15 @@
 = Kunsttag Tumblr Theme
 
-middleman server
-middleman build
+bundle exec middleman server
+bundle exec middleman build
+
+= Static File Upload
+
+http://www.tumblr.com/themes/upload_static_file
 
 == Change log
 
-middleman init kunsstag
+middleman init kunsttag
 cd kunsttag
 git init
 git add .

@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
 @import "compass";
 
-$image-path: 'http://44ft.com/kunsttag/images/';
+$image_path: 'http://44ft.com/kunsttag/images/';
 //$image-path: '../images/';
 $color-konzert: #EB1F78;
 $color-theater: #8AC440;
@@ -270,7 +270,7 @@ input.btn {
         margin-top: $box-padding;
       }
       .tags {
-        background: white url('#{$image-path}#{$image}') bottom right no-repeat;
+        background: white url('#{$image_path}#{$image}') bottom right no-repeat;
       }
       border-color: $color;
     }

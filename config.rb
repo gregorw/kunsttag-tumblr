@@ -1,3 +1,6 @@
+# Reload the browser automatically whenever files change
+activate :livereload
+
 # Slim tempates
 # require "slim" 
 # Slim::Engine.set_default_options pretty: true
@@ -10,31 +13,23 @@ activate :tumblargh,
 
 page "/channel.html", layout: false
 
-set :css_dir, 'stylesheets'
-
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
+I18n.enforce_available_locales = false
 
 # Build-specific configuration
 configure :build do
-  # For example, change the Compass output style for deployment
-  activate :minify_css
-
-  # Minify Javascript on build
-  activate :minify_javascript
-
-  # Fonts are on cyon cerver
+  
+  # Assets are on cyon server
   set :images_dir, '//44ft.com/kunsttag_assets/'
   set :css_dir, '//44ft.com/kunsttag_assets/'
   set :js_dir, '//44ft.com/kunsttag_assets/'
   
+  # For example, change the Compass output style for deployment
+  activate :minify_css
+  
+  # Minify Javascript on build
+  activate :minify_javascript
+  
   # Enable cache buster
   # activate :asset_hash
 
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Or use a different image path
-  # set :http_path, "/Content/images/"
 end

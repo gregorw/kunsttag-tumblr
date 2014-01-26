@@ -79,7 +79,6 @@ GEM
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
     ref (1.0.5)
-    ruby18_source_location (0.2)
     sass (3.2.14)
     sprockets (2.10.1)
       hike (~> 1.2)
@@ -115,6 +114,5 @@ DEPENDENCIES
   middleman
   middleman-livereload
   rake
-  ruby18_source_location
   therubyracer
   tumblargh

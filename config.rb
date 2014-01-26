@@ -19,9 +19,11 @@ I18n.enforce_available_locales = false
 configure :build do
   
   # Assets are on cyon server
-  set :images_dir, '//44ft.com/kunsttag_assets/'
-  set :css_dir, '//44ft.com/kunsttag_assets/'
-  set :js_dir, '//44ft.com/kunsttag_assets/'
+  # set :images_dir, '//44ft.com/kunsttag_assets'
+  # set :js_dir, '//44ft.com/kunsttag_assets'
+  
+  # Setting CSS dir does not work in build
+  # set :css_dir, '//44ft.com/kunsttag_assets'
   
   # For example, change the Compass output style for deployment
   activate :minify_css
@@ -30,6 +32,8 @@ configure :build do
   activate :minify_javascript
   
   # Enable cache buster
-  # activate :asset_hash
-
+  activate :asset_hash, exts: ['.js', '.css'], ignore: ['modernizr-2.6.2.min.js']
+  
+  # Or use a different asset path
+  set :http_prefix, "//44ft.com/kunsttag_assets/"
 end

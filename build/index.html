@@ -19,7 +19,7 @@
         <meta name="color:Film Tanz Theater" content="#8AC440"/>
         <meta name="color:Kunst und Medien" content="#FFAB00"/>
         <meta name="color:Design" content="#29A8E0"/>
-        <meta name='text:Disqus Shortname' content='' />
+        <meta name='text:Disqus Shortname' content='kunsttag' />
 
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
@@ -42,12 +42,12 @@
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
         -->
           
-        <link href="//44ft.com/kunsttag_assets/stylesheets/all-571b5022.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="//44ft.com/kunsttag_assets/stylesheets/all-88e476d8.css" media="screen" rel="stylesheet" type="text/css" />
         <script src="//44ft.com/kunsttag_assets/javascripts/modernizr-2.6.2.min.js" type="text/javascript"></script>
 
     </head>
     <body class="{block:IndexPage}index{/block:IndexPage} {block:PermalinkPage}permalink{/block:PermalinkPage}">
-      <div id="fb-root"></div>
+        <div id="fb-root"></div>
       
         <header>
           <div id="navbar">
@@ -115,139 +115,133 @@
           <section id="events">
   {block:Posts}
   
-    <!-- Add your own event -->
-    {block:Post9}
-    <article class="post">
-      <a href="/submit">
-        <div class="caption">
-          {SubmitLabel}
-        </div>
-      </a>
-    </article>
-    {/block:Post9}
-    
     <article class="post {PostType} {TagsAsClasses}">
 
-      {block:Text}
-        <div class="padded">
-          {block:Title}
-            {block:IndexPage}<a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>{/block:IndexPage}
-            {block:PermalinkPage}<h2>{Title}</h2>{/block:PermalinkPage}
-          {/block:Title}
-      
-          {Body}
-      
-          {block:More}<a href="{Permalink}">Weiterlesen &raquo;</a>{/block:More}
-        </div>
-      {/block:Text}
+      <!-- Add your own event -->
+{block:Post9}
+  <article class="post">
+    <a href="/submit">
+      <div class="caption">
+        {SubmitLabel}
+      </div>
+    </a>
+  </article>
+{/block:Post9}
 
-      {block:Photo}
-        {block:IndexPage}
-          <a href="{Permalink}">
-            <img src="{PhotoURL-400}" alt="{PhotoAlt}">
-          </a>
-        {/block:IndexPage}
-      
-        {block:PermalinkPage}
-          {LinkOpenTag}
-            <img src="{PhotoURL-500}" alt="{PhotoAlt}">           
-          {LinkCloseTag}
-        {/block:PermalinkPage}
-        
-        {block:Caption}
-          <div class="caption">{Caption}</div>
-        {/block:Caption}
-      {/block:Photo}
-
-      {block:Photoset}
-        {Photoset-500}
-
-        {block:Caption}
-          <div class="caption">{Caption}</div>
-        {/block:Caption}
-      {/block:Photoset}
-
-      {block:Quote}
-        <blockquote>
-          <p class="h3">&ldquo;{Quote}&rdquo;</p>
-
-          {block:Source}
-            <p class="source">&ndash; {Source}</p>
-          {/block:Source}
-        </blockquote>
-      {/block:Quote}
-
-      {block:Link}
-        <div class="padded">
-          <h2><a href="{URL}"{Target}>{Name} &raquo;</a></h2>
-  
-          {block:Description}
-            {Description}
-          {/block:Description}
-        </div>
-      {/block:Link}
-
-      {block:Chat}
-        <div class="padded">        
-          {block:Title}
-            <h2>{Title}</h2>
-          {/block:Title}
-          <ul>
-            {block:Lines}
-              <li class="{Alt}">
-                {block:Label}
-                  <b>{Label}</b>
-                {/block:Label}
-                {Line}
-              </li>
-            {/block:Lines}
-          </ul>
-        </div>
-      {/block:Chat}
-
-      {block:Audio}
-        {AudioEmbed-640}
-        {block:Caption}
-          <div class="caption">{Caption}</div>
-        {/block:Caption}
-      {/block:Audio}
-
-
-      {block:Video}
-        {Video-700}
-        {block:Caption}
-          <div class="caption">{Caption}</div>
-        {/block:Caption}
-      {/block:Video}
 
       {block:Answer}
-        <div class="padded">
-          <h2>{Asker} asked: <q>{Question}</q></h2>
-          {Answer}
-        </div>
-      {/block:Answer}
+  <div class="padded">
+    <h2>{Asker} asked: <q>{Question}</q></h2>
+    {Answer}
+  </div>
+{/block:Answer}
 
-      {block:Date}
-        <footer>
-        
-          {block:HasTags}            
-            <ul class="tags">
-              {block:Tags}
-                <li>
-                  <a href="{TagURL}">#{Tag}</a>
-                </li>
-              {/block:Tags}
-            </ul>
-          {/block:HasTags}      
-                      
-        </footer>
-      {/block:Date}
+      {block:Audio}
+  {AudioEmbed-640}
+  {block:Caption}
+    <div class="caption">{Caption}</div>
+  {/block:Caption}
+{/block:Audio}
+
+      {block:Chat}
+  <div class="padded">        
+    {block:Title}
+      <h2>{Title}</h2>
+    {/block:Title}
+    <ul>
+      {block:Lines}
+        <li class="{Alt}">
+          {block:Label}
+            <b>{Label}</b>
+          {/block:Label}
+          {Line}
+        </li>
+      {/block:Lines}
+    </ul>
+  </div>
+{/block:Chat}
+
+      {block:Link}
+  <div class="padded">
+    <h2><a href="{URL}"{Target}>{Name} &raquo;</a></h2>
+
+    {block:Description}
+      {Description}
+    {/block:Description}
+  </div>
+{/block:Link}
+
+      {block:Photo}
+  {block:IndexPage}
+    <a href="{Permalink}">
+      <img src="{PhotoURL-400}" alt="{PhotoAlt}">
+    </a>
+  {/block:IndexPage}
+
+  {block:PermalinkPage}
+    {LinkOpenTag}
+      <img src="{PhotoURL-500}" alt="{PhotoAlt}">           
+    {LinkCloseTag}
+  {/block:PermalinkPage}
+  
+  {block:Caption}
+    <div class="caption">{Caption}</div>
+  {/block:Caption}
+{/block:Photo}
+
+      {block:Photoset}
+  {Photoset-500}
+
+  {block:Caption}
+    <div class="caption">{Caption}</div>
+  {/block:Caption}
+{/block:Photoset}
+
+      {block:Quote}
+  <blockquote>
+    <p class="h3">&ldquo;{Quote}&rdquo;</p>
+
+    {block:Source}
+      <p class="source">&ndash; {Source}</p>
+    {/block:Source}
+  </blockquote>
+{/block:Quote}
+
+      {block:Text}
+  <div class="padded">
+    {block:Title}
+      {block:IndexPage}<a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>{/block:IndexPage}
+      {block:PermalinkPage}<h2>{Title}</h2>{/block:PermalinkPage}
+    {/block:Title}
+
+    {Body}
+
+    {block:More}<a href="{Permalink}">Weiterlesen &raquo;</a>{/block:More}
+  </div>
+{/block:Text}
+
       
-    </article> <!-- /post -->     
+      {block:Date}
+  <footer>
+  
+    {block:HasTags}            
+      <ul class="tags">
+        {block:Tags}
+          <li>
+            <a href="{TagURL}">#{Tag}</a>
+          </li>
+        {/block:Tags}
+      </ul>
+    {/block:HasTags}      
+                
+  </footer>
+{/block:Date}
+
+      
+    </article> 
 
     <!-- Only rendered for posts -->
     {block:PermalinkPage}
-      {block:Date}
         <aside id="social">
           <div class="fb-like" data-href="xxx" data-width="350" data-layout="button_count" data-show-faces="false" data-send="true"></div>
           <div class="tweet-button">
@@ -256,7 +250,9 @@
           </div>
         
           <ul class="details">
-            <li><span title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</span></li>
+            {block:Date}
+              <li><span title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</span></li>
+            {/block:Date}
             {block:RebloggedFrom}
               <li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>
             {/block:RebloggedFrom}
@@ -264,9 +260,9 @@
               <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
             {/block:ContentSource}
           </ul>
-      
+          {LikeButton}{ReblogButton}
         </aside>
-      {/block:Date}
+      
 
       {block:PostNotes}
         <aside class="notes">
@@ -275,26 +271,26 @@
         </aside>
       {/block:PostNotes}
 
-      {block:Date}
-        {block:IfDisqusShortname}
-        <aside class="disqus">
-          <div id="disqus_thread"></div>
-          <script type="text/javascript">
-              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-              var disqus_shortname = 'kunsttag'; // Required - Replace <example> with your forum shortname
+      {block:IfDisqusShortname}
+  <aside class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'kunsttag'; // Required - Replace <example> with your forum shortname
 
-              /* * * DON'T EDIT BELOW THIS LINE * * */
-              (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-          <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-        </aside>
-        {/block:IfDisqusShortname}
-      {/block:Date}
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </aside>
+{/block:IfDisqusShortname}
+
+
     {/block:PermalinkPage}
 
   {/block:Posts}
@@ -303,9 +299,17 @@
 
 {block:Pagination}
   <div id="pagination">
-    <span class="previous">{block:PreviousPage}<a href="{PreviousPage}" class="previous">{/block:PreviousPage}&laquo; Previous{block:PreviousPage}</a>{/block:PreviousPage}</span>
+    <span class="previous">
+      {block:PreviousPage}
+        <a href="{PreviousPage}" class="previous">{/block:PreviousPage}&laquo; Previous{block:PreviousPage}</a>
+      {/block:PreviousPage}
+    </span>
     <span class="page-numbers">{CurrentPage}/{TotalPages}</span>
-    <span class="next">{block:NextPage}<a href="{NextPage}">{/block:NextPage}Next &raquo;{block:NextPage}</a>{/block:NextPage}</span>
+    <span class="next">
+      {block:NextPage}
+        <a href="{NextPage}">{/block:NextPage}Next &raquo;{block:NextPage}</a>
+      {/block:NextPage}
+    </span>
   </div>
 {/block:Pagination}
           

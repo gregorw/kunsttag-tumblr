@@ -253,10 +253,10 @@ input.btn {
       background-repeat: no-repeat;
     }
     
-    border: 3px solid #eee;
+//    border: 3px solid #eee;
     
     .caption {
-      margin: $box-padding;
+//      margin: $box-padding;
     }
     
     @mixin category($color, $image) {
@@ -270,6 +270,17 @@ input.btn {
         background: white image-url($image) bottom right no-repeat;
       }
       border-color: $color;
+      
+      img:after {
+        content: "XYZ";
+        display: block;
+        background: $color;
+        width: 100px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
     }
     
     &.konzert {
@@ -313,7 +324,7 @@ input.btn {
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   padding: $vertical-padding $padding;
   background-attachment: fixed;
   > header {

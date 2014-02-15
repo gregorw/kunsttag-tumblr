@@ -9,11 +9,15 @@ activate :livereload
 require 'tumblargh'
 activate :tumblargh,
   api_key: 'i41pISnf18m39MT1kMQLsRPC8mU7XcOem6eYALzkLcCoKgTtgm', # This is your OAuth consumer key
-  blog: 'kunsttag.tumblr.com.json'
+  blog: 'kunsttag.tumblr.com'
 
 page "/channel.html", layout: false
 
 I18n.enforce_available_locales = false
+
+# set :css_dir, 'assets/stylesheets'
+# set :js_dir, 'assets/javascripts'
+# set :images_dir, 'assets/images'
 
 # Build-specific configuration
 configure :build do
@@ -24,6 +28,9 @@ configure :build do
   
   # Setting CSS dir does not work in build
   # set :css_dir, '//44ft.com/kunsttag_assets'
+  
+  # Or use a different asset path
+  set :http_prefix, "//44ft.com/kunsttag_assets/"  
   
   # For example, change the Compass output style for deployment
   activate :minify_css
@@ -36,5 +43,5 @@ configure :build do
   
   # Or use a different asset path
   set :http_prefix, "//44ft.com/kunsttag_assets/"
-  
+
 end

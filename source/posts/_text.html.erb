@@ -1,0 +1,12 @@
+{block:Text}
+  <div class="padded">
+    {block:Title}
+      {block:IndexPage}<a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>{/block:IndexPage}
+      {block:PermalinkPage}<h2>{Title}</h2>{/block:PermalinkPage}
+    {/block:Title}
+
+    {Body}
+
+    {block:More}<a href="{Permalink}">Weiterlesen &raquo;</a>{/block:More}
+  </div>
+{/block:Text}

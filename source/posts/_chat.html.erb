@@ -1,0 +1,17 @@
+{block:Chat}
+  <div class="padded">        
+    {block:Title}
+      <h2>{Title}</h2>
+    {/block:Title}
+    <ul>
+      {block:Lines}
+        <li class="{Alt}">
+          {block:Label}
+            <b>{Label}</b>
+          {/block:Label}
+          {Line}
+        </li>
+      {/block:Lines}
+    </ul>
+  </div>
+{/block:Chat}

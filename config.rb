@@ -36,4 +36,5 @@ configure :build do
   
   # Or use a different asset path
   set :http_prefix, "//44ft.com/kunsttag_assets/"
+  
 end

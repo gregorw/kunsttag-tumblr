@@ -1,14 +1,6 @@
 # Kunsttag – © 2013 Gregor Wassmann
-$ ->
-  index_options = 
-    autoResize: true,
-    offset: 30,
-    flexibleWidth: 300,
-    resizeDelay: 25,
-    container: $("#events")
 
-  permalink_options = $.extend({}, index_options, { flexibleWidth: 600 })
-  
+$ ->  
   # Index Page
   if $('body.index').length == 1
     options = index_options

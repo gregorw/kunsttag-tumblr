@@ -235,6 +235,9 @@ var tumblrAutoPager = {
           
           // Kunsttag custom code
           jQuery(".post").wookmark(index_options);
+          jQuery("#events").imagesLoaded(function(){
+            jQuery(".post").wookmark(index_options);
+          });
           
           Tumblr.LikeButton.get_status_by_page(p);
         }

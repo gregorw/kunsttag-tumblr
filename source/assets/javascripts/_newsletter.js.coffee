@@ -1,3 +1,6 @@
 $ ->
   unless $.cookie 'newsletter-signed-up'
-    alert 'sign up now'
+    $('#newsletter-overlay').show().click ->
+      $(this).fadeOut()
+    
+    

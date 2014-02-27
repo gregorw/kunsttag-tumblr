@@ -47,22 +47,6 @@ a {
   }
 }
 
-#newsletter {
-  margin: 1em auto;
-  padding: $vertical-padding $padding;
-  width: 300px;
-  height: 200px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -150px;
-  background: white;
-  z-index: 2;
-  @include border-radius(1em);
-  @include shadow;
-}
-
 header {
   button {
     background: none;

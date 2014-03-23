@@ -9,15 +9,15 @@ activate :livereload
 require 'tumblargh'
 activate :tumblargh,
   api_key: 'i41pISnf18m39MT1kMQLsRPC8mU7XcOem6eYALzkLcCoKgTtgm', # This is your OAuth consumer key
-  blog: 'kunsttag.tumblr.com'
+  blog: 'kunsttag.tumblr.com.json'
 
 page "/channel.html", layout: false
 
 I18n.enforce_available_locales = false
 
-# set :css_dir, 'assets/stylesheets'
-# set :js_dir, 'assets/javascripts'
-# set :images_dir, 'assets/images'
+set :css_dir, 'assets/stylesheets'
+set :js_dir, 'assets/javascripts'
+set :images_dir, 'assets/images'
 
 # Build-specific configuration
 configure :build do

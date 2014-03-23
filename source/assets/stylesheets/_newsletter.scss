@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.5);
   z-index: 100;
   text-align: center;
   
@@ -23,7 +23,7 @@
   margin: 1em auto;
   padding: 2* $padding;
   width: 600px;
-  max-width: 80%;
+  max-width: 70%;
   background: white;
   display: inline-block;
   vertical-align: middle;
@@ -37,7 +37,7 @@
   }
   
   input {
-    width: 80%;
+    width: 70%;
     margin-bottom: 1ex;
     padding: 1ex;
 
@@ -52,9 +52,13 @@
   
   li {
     list-style: none;
+    padding-left: 1.5rem;
     &:before{
       content: '\2714';
-      margin-right: 1ch;
+      margin-right: 0.5rem;
+      margin-left: -1.5rem; 
+      width: 1rem;
+      display: inline-block;
     }
   }
   

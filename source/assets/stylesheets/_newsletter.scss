@@ -7,20 +7,76 @@
   left: 0;
   background: rgba(0,0,0,0.8);
   z-index: 100;
+  text-align: center;
+  
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+//    margin-right: -0.25em; /* Adjusts for spacing */
+  }
 }
 
 #newsletter {
+  position: relative;
   margin: 1em auto;
-  padding: $vertical-padding $padding;
-  width: 400px;
-  height: 300px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -200px;
-  margin-left: -200px;
+  padding: 2* $padding;
+  width: 600px;
+  max-width: 80%;
   background: white;
+  display: inline-block;
+  vertical-align: middle;
   z-index: 2;
-  text-align: center;
   @include shadow;
+  
+  form, aside {
+    float: left;
+    width: 50%;
+    text-align: left;
+  }
+  
+  input {
+    width: 80%;
+    margin-bottom: 1ex;
+    padding: 1ex;
+
+    &[type=submit] {
+      border-radius: 2em;
+    }
+  }
+  
+  ul {
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
+    &:before{
+      content: '\2714';
+      margin-right: 1ch;
+    }
+  }
+  
+  img {
+    height: 45px;
+  }
+  
+  .small {
+    font-size: 0.7rem;
+  }
+  
+  .close_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1ex;
+    
+    .cancel {
+      text-decoration: none;
+      color: #ddd;
+      font-size: 1.5em;
+      line-height: 1ex;
+    }
+  }
 }

@@ -1,6 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
-@import "compass";
-
 $color-konzert: #EB1F78;
 $color-theater: #8AC440;
 $color-kunst: #FFAB00;
@@ -47,55 +44,6 @@ a {
   }
 }
 
-header {
-  button {
-    background: none;
-    border: none;
-    padding: 0;
-  }
-  
-  .navitem {
-    margin-top: 0.1em;
-  
-    &#add-event {
-      float: right;
-      margin-top: 0.4em;
-      @include border-radius(1.2em);
-      background: $color-theater;
-      color: white;
-      font-weight: 300;
-      text-decoration: none;
-      padding: 0.3em 0.9em;
-      
-      .desktop {
-      }
-      .mobile {
-        font-size: 1.4em;
-        line-height: 0.9em;
-        margin: 0.1em -0.2em 0;
-      }
-    
-      &:hover {
-        background: $color-konzert;
-      }
-    }
-  
-    &#navigation-toggle {
-      float: left;
-      width: 2.4em;
-      padding: 0.4em;
-      margin-left: -0.4em;
-
-      span {
-        display: block;
-        height: 5px;
-        margin: 4px 0;
-        background: black;
-      }
-    }
-  }
-}
-
 
 #social {
   margin: $vertical-padding 0;
@@ -113,7 +61,7 @@ ol.notes {
   padding-left: 0;
 }
 
-.avatar { 
+.avatar {
   @include border-radius(8px);
 }
 
@@ -132,57 +80,6 @@ ol.notes {
   text-align: center;
   width: 280px;
   margin: $vertical-padding auto;
-}
-
-#navigation {
-  display: none;
-  font-weight: 300;
-  margin-bottom: 2em;
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: $padding 0;
-    
-    width: 50%;
-    float: left;      
-
-    &#days {
-      clear: both;
-    }
-    
-    li {
-      font-size: 0.9em;
-      padding: 0;
-      border-bottom: 1px solid #eee;
-      &:last-child {
-        border-bottom-width: 0;
-      }
-      a {
-        display: block;
-        padding: ($padding / 2) $padding;
-        color: black;
-        text-decoration: none;
-        
-      }
-      &#newsletter-nav {
-        padding: ($padding / 2) $padding;
-        .email {
-          font-family: 'Roboto', sans-serif;
-          font-weight: 300;
-          width: 100%;
-          padding: 0;
-          margin: ($padding / 2) 0;
-          border: 0;
-          background: none;
-        }
-      }
-    }
-  }
-  .konzert { @include text-highlight($color-konzert); }
-  .film_tanz_theater { @include text-highlight($color-theater); }
-  .kunst_und_medien { @include text-highlight($color-kunst); }
-  .design { @include text-highlight($color-design); }
 }
 
 input.btn {
@@ -207,86 +104,6 @@ input.btn {
   max-width: 500px;
   .post {
     width: 100%;
-  }
-}
-
-#events {
-  position: relative;
-  
-  .post {
-    width: 200px;
-    display: block;
-    background: white;
-    font-weight: 300;
-//    @include shadow;
-    
-    &.photo {
-      img {
-        width: 100%;
-      }
-    }
-    
-    > .tag {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 50px;
-      height: 50px;
-      background-size: 50px 50px;
-      background-repeat: no-repeat;
-    }
-    
-    border: 3px solid #eee;
-    
-    .caption {
-      margin: $box-padding;
-    }
-    
-    @mixin category($color, $image) {
-      .caption > *:first-child {
-        color: $color;
-        font-weight: 700;
-        font-size: 1.2em;
-        margin-top: $box-padding;
-      }
-      .tags {
-        background: white image-url($image) bottom right no-repeat;
-      }
-      border-color: $color;
-    }
-    
-    &.konzert {
-      @include category($color-konzert, 'icon_konzerte.png');
-    }
-    
-    &.film_tanz_theater {
-      @include category($color-theater, 'icon_theater.png');
-    }
-    
-    &.kunst_und_medien {
-      @include category($color-kunst, 'icon_kunst.png');
-    }
-    
-    &.design {
-      @include category($color-design, 'icon_design.png');
-    }
-    
-    .tags {
-      list-style-type: none;
-      margin: $box-padding;
-      padding: 0 60px 0 0;
-      min-height: 50px;
-      background-size: 50px 50px;
-      background-repeat: no-repeat;
-      li {
-        font-size: 0.8em;
-        display: inline;
-        a {
-          color: #999;
-          margin-right: 0.5em;
-        }
-      }
-    }    
   }
 }
 

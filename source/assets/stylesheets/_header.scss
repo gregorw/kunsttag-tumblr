@@ -1,0 +1,47 @@
+header {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .navitem {
+    margin-top: 0.1em;
+
+    &#add-event {
+      float: right;
+      margin-top: 0.4em;
+      @include border-radius(1.2em);
+      background: $color-theater;
+      color: white;
+      text-decoration: none;
+      padding: 0.3em 0.9em;
+
+      .desktop {
+      }
+      .mobile {
+        font-size: 1.4em;
+        line-height: 0.9em;
+        margin: 0.1em -0.2em 0;
+      }
+
+      &:hover {
+        background: $color-konzert;
+      }
+    }
+
+    &#navigation-toggle {
+      float: left;
+      width: 2.4em;
+      padding: 0.4em;
+      margin-left: -0.4em;
+
+      span {
+        display: block;
+        height: 5px;
+        margin: 4px 0;
+        background: black;
+      }
+    }
+  }
+}

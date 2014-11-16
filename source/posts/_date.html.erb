@@ -1,15 +1,14 @@
 {block:Date}
   <footer>
-  
-    {block:HasTags}            
-      <ul class="tags">
+
+    {block:HasTags}
+      <div class="tags">
         {block:Tags}
-          <li>
-            <a href="{TagURL}">#{Tag}</a>
-          </li>
+          <a href="{TagURL}">{Tag}</a>
         {/block:Tags}
-      </ul>
-    {/block:HasTags}      
-                
+      </div>
+    {/block:HasTags}
+
+    <hr/>
   </footer>
 {/block:Date}

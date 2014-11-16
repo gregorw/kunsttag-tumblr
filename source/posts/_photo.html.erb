@@ -1,17 +1,21 @@
 {block:Photo}
+
   {block:IndexPage}
     <a href="{Permalink}">
-      <img src="{PhotoURL-400}" alt="{PhotoAlt}">
+      <div class="photo-container">
+        <img src="{PhotoURL-400}" alt="{PhotoAlt}">
+      </div>
     </a>
   {/block:IndexPage}
 
   {block:PermalinkPage}
     {LinkOpenTag}
-      <img src="{PhotoURL-500}" alt="{PhotoAlt}">           
+      <img src="{PhotoURL-500}" alt="{PhotoAlt}">
     {LinkCloseTag}
   {/block:PermalinkPage}
-  
+
   {block:Caption}
     <div class="caption">{Caption}</div>
   {/block:Caption}
+
 {/block:Photo}

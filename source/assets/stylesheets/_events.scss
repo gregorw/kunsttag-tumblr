@@ -1,0 +1,118 @@
+#events {
+  position: relative;
+
+  a {
+    text-decoration: none;
+  }
+
+  .post {
+    width: 200px;
+    display: block;
+    background: white;
+    font-weight: 300;
+
+    &.photo {
+      img {
+        width: 100%;
+      }
+    }
+
+    > .tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      background-size: 50px 50px;
+      background-repeat: no-repeat;
+    }
+
+    // border: 3px solid #eee;
+
+    .caption {
+      color: black;
+    }
+
+    @mixin category($color, $image) {
+      .caption > *:first-child {
+        color: $color;
+        font-weight: 700;
+        font-size: 1.2em;
+        margin-top: $box-padding;
+      }
+      .tags {
+        a {
+          background: $color;
+        }
+      }
+      .photo-container {
+        position: relative;
+
+        &::after {
+          background-size: 50px 50px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-color: white;
+          background-image: image-url($image + '.png');
+          @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-image: image-url($image + '_@2X.png');
+          }
+          position: absolute;
+          width: 48px;
+          height: 48px;
+          bottom: -24px;
+          left: 50%;
+          margin-left: -24px;
+          display: block;
+          content: '';
+          border-radius: 24px;
+        }
+      }
+    }
+
+    &.konzert {
+      @include category($color-konzert, 'icon_konzerte');
+    }
+
+    &.film_tanz_theater {
+      @include category($color-theater, 'icon_theater');
+    }
+
+    &.kunst_und_medien {
+      @include category($color-kunst, 'icon_kunst');
+    }
+
+    &.design {
+      @include category($color-design, 'icon_design');
+    }
+
+    .tags {
+      @include pie-clearfix;
+
+      a {
+        font-size: 0.8em;
+        margin: 0 2px 2px 0;
+        color: white;
+        text-decoration: none;
+        padding: 2px 4px;
+        float: left;
+      }
+    }
+
+    footer {
+      @include pie-clearfix;
+
+      hr {
+        display: block;
+        width: 72px;
+        height: 2px;
+        position: relative;
+        left: 50%;
+        margin-left: -36px;
+        border: 0;
+        background-color: #ddd;
+        @include rhythm($leader: 2);
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@
 
 <section id="events">
   {block:Posts}
-  
+
     <article class="post {PostType} {TagsAsClasses}">
 
       <%= partial 'posts/submit' %>
@@ -19,32 +19,32 @@
       <% # partial 'posts/video' %>
 
       <%= partial 'posts/date' %>
-      
-    </article> 
+
+    </article>
 
     <!-- Only rendered for posts -->
     {block:PermalinkPage}
-        <aside id="social">
-          <div class="fb-like" data-href="xxx" data-width="350" data-layout="button_count" data-show-faces="false" data-send="true"></div>
-          <div class="tweet-button">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-via="kunsttagCH" data-lang="de">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-          </div>
-        
-          <ul class="details">
-            {block:Date}
-              <li><span title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</span></li>
-            {/block:Date}
-            {block:RebloggedFrom}
-              <li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>
-            {/block:RebloggedFrom}
-            {block:ContentSource}
-              <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
-            {/block:ContentSource}
-          </ul>
-          {LikeButton}{ReblogButton}
-        </aside>
-      
+      <aside id="social">
+        <div class="fb-like" data-href="xxx" data-width="350" data-layout="button_count" data-show-faces="false" data-send="true"></div>
+        <div class="tweet-button">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="kunsttagCH" data-lang="de">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+
+        <ul class="details">
+          {block:Date}
+            <li><span title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</span></li>
+          {/block:Date}
+          {block:RebloggedFrom}
+            <li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>
+          {/block:RebloggedFrom}
+          {block:ContentSource}
+            <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
+          {/block:ContentSource}
+        </ul>
+        {LikeButton}{ReblogButton}
+      </aside>
+
 
       {block:PostNotes}
         <aside class="notes">

@@ -1,0 +1,50 @@
+#navigation {
+  display: none;
+  font-weight: 300;
+  margin-bottom: 2em;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: $padding 0;
+
+    width: 50%;
+    float: left;
+
+    &#days {
+      clear: both;
+    }
+
+    li {
+      font-size: 0.9em;
+      padding: 0;
+      border-bottom: 1px solid #eee;
+      &:last-child {
+        border-bottom-width: 0;
+      }
+      a {
+        display: block;
+        padding: ($padding / 2) $padding;
+        color: black;
+        text-decoration: none;
+
+      }
+      &#newsletter-nav {
+        padding: ($padding / 2) $padding;
+        .email {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 300;
+          width: 100%;
+          padding: 0;
+          margin: ($padding / 2) 0;
+          border: 0;
+          background: none;
+        }
+      }
+    }
+  }
+  .konzert { @include text-highlight($color-konzert); }
+  .film_tanz_theater { @include text-highlight($color-theater); }
+  .kunst_und_medien { @include text-highlight($color-kunst); }
+  .design { @include text-highlight($color-design); }
+}

@@ -9,9 +9,9 @@
 //= require vendor/_infinitescrolling
 
 // Wookmark options. Make global for resetting after infinite scrolling.
-var index_options = {  
+var index_options = {
   autoResize: true,
-  offset: 30,
+  offset: 50,
   flexibleWidth: 300,
   resizeDelay: 25
 }
